@@ -31,7 +31,8 @@
     ]
     ++ [
       ./otomadb
-      # ./ddclient.nix
+      ./cloudflared.nix
+      ./ddclient.nix
     ];
 
   boot = {
@@ -74,8 +75,6 @@
 
   # Additional packages
   system.stateVersion = "23.05";
-
-  nix.settings.max-jobs = lib.mkDefault 32;
 
   environment.systemPackages = with pkgs; [
     direnv
@@ -127,5 +126,60 @@
     starship = {
       enable = true;
     };
+  };
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      builders-use-substitutes = true
+      keep-outputs = true
+      keep-derivations = true
+    '';
+
+    gc = {
+      automatic = true;
+      dates = "monthly";
+      options = "--delete-older-than 30d";
+    };
+
+    settings = {
+      auto-optimise-store = true;
+      trusted-users = [
+        "root"
+        "sno2wman"
+        "nix-builder"
+      ];
+    };
+
+    buildMachines = [
+      {
+        hostName = "remilia";
+        systems = [
+          "x86_64-linux"
+          # "aarch64-linux"
+          # "i686-linux"
+        ];
+        sshUser = "nix-builder";
+        sshKey = "/etc/ssh/id_ed25519";
+        maxJobs = 24;
+        speedFactor = 2;
+        supportedFeatures = [
+          "nixos-test"
+          "benchmark"
+          "big-parallel"
+          "kvm"
+        ];
+        mandatoryFeatures = [];
+      }
+    ];
+  };
+
+  users.users.nix-builder = {
+    isNormalUser = true;
+    # extraGroups = ["wheel"];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ02RYFEONAr/5a3fokBYHUFVPqF8G64DxhV5RGu7gtK me@sno2wman.net"
+    ];
   };
 }

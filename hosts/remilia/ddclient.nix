@@ -1,5 +1,4 @@
 {config, ...}: {
-  # agenix
   age.secrets."cloudflare-global-api-key".file = ../../secrets/cloudflare-global-api-key.age;
 
   services.ddclient = {

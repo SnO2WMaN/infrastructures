@@ -83,7 +83,7 @@
             {
               name = "my-nixos-switch";
               category = "nixos";
-              command = "nixos-rebuild switch --flake \".#$(hostname)\" --use-remote-sudo";
+              command = "nixos-rebuild switch --flake \".#$(hostname)\"";
             }
           ];
           # devshell.startup.pnpm_install.text = "pnpm install";
