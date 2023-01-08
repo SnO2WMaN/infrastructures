@@ -13,6 +13,10 @@
       url = "github:hercules-ci/arion";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     vscode-server = {
       url = "github:msteen/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +52,7 @@
           inherit system;
           overlays = with inputs; [
             devshell.overlay
+            agenix.overlay
           ];
         };
       in {
@@ -58,6 +63,7 @@
             treefmt
             git-crypt
             taplo-cli
+            agenix
           ];
           commands = [
             {
