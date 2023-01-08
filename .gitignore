@@ -1,3 +1,7 @@
 # Nix
 result
 .direnv/
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json

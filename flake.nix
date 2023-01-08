@@ -33,6 +33,11 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+    yamlfmt = {
+      url = "github:SnO2WMaN/yamlfmt.nix";
+      inputs.devshell.follows = "devshell";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
   outputs = {
     self,
@@ -53,6 +58,9 @@
           overlays = with inputs; [
             devshell.overlay
             agenix.overlay
+            (final: prev: {
+              yamlfmt = yamlfmt.packages.${system}.yamlfmt;
+            })
           ];
         };
       in {
@@ -64,6 +72,7 @@
             git-crypt
             taplo-cli
             agenix
+            yamlfmt
           ];
           commands = [
             {
