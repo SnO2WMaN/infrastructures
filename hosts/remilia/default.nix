@@ -7,6 +7,8 @@
   nixos-hardware,
   home-manager,
   vscode-server,
+  agenix,
+  arion,
   ...
 }: {
   imports =
@@ -14,6 +16,8 @@
       nixpkgs.nixosModules.notDetected
       home-manager.nixosModules.home-manager
       vscode-server.nixosModules.default
+      agenix.nixosModules.age
+      arion.nixosModules.arion
     ]
     ++ (with nixos-hardware.nixosModules; [
       common-cpu-amd
@@ -23,6 +27,11 @@
       ../../modules/ssh.nix
       ../../modules/i18n.nix
       ../../modules/time.nix
+      ../../modules/docker.nix
+    ]
+    ++ [
+      ./otomadb
+      # ./ddclient.nix
     ];
 
   boot = {
@@ -56,10 +65,6 @@
     device = "/dev/disk/by-uuid/DAAD-07F4";
     fsType = "vfat";
   };
-  fileSystems."/mnt/backups" = {
-    device = "akyu:/volume1/backups";
-    fsType = "nfs";
-  };
 
   swapDevices = [
     {
@@ -73,10 +78,11 @@
   nix.settings.max-jobs = lib.mkDefault 32;
 
   environment.systemPackages = with pkgs; [
-    vim
+    direnv
     wget
     sudo
     curl
+    bottom
   ];
 
   # Network
@@ -98,7 +104,6 @@
     shell = pkgs.zsh;
     extraGroups = [
       "wheel"
-      "docker"
       "libvirtd"
       "kvm"
     ];
@@ -110,6 +115,15 @@
       config = {
         safe.directory = ["/etc/nixos"];
       };
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+    starship = {
+      enable = true;
     };
   };
 }
