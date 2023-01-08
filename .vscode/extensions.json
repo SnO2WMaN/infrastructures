@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "mkhl.direnv",
+        "arrterian.nix-env-selector",
+        "jnoortheen.nix-ide",
+        "ms-azuretools.vscode-docker"
+    ]
+}
