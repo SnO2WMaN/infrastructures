@@ -83,6 +83,7 @@
     sudo
     curl
     bottom
+    zellij
   ];
 
   # Network
@@ -108,6 +109,7 @@
       "kvm"
     ];
   };
+  home-manager.users.sno2wman = import ./home-manager/profiles/sno2wman;
 
   programs = {
     git = {
