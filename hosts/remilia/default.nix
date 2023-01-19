@@ -31,8 +31,8 @@
     ]
     ++ [
       ./otomadb
-      ./cloudflared.nix
-      ./ddclient.nix
+      # ./cloudflared.nix
+      # ./ddclient.nix
     ];
 
   boot = {
