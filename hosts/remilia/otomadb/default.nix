@@ -9,8 +9,6 @@
     certs = {
       "api.otomadb.com" = {
         email = "me@sno2wman.net";
-        # listenHTTP = ":8080";
-        # dnsProvider = "cloudflare";
       };
     };
   };
