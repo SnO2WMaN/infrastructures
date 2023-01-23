@@ -40,7 +40,7 @@ services:
         source: postgres_data
         target: /var/lib/postgresql/data
   neo4j:
-    image: neo4j:5.2
+    image: neo4j:5.3
     environment:
       NEO4J_AUTH: neo4j/password
     healthcheck:
