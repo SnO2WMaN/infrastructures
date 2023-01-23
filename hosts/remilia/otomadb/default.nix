@@ -7,10 +7,8 @@
   security.acme = {
     acceptTerms = true;
     certs = {
-      "api.otomad-database.sno2wman.net" = {
+      "api.otomadb.com" = {
         email = "me@sno2wman.net";
-        # listenHTTP = ":8080";
-        # dnsProvider = "cloudflare";
       };
     };
   };
@@ -24,14 +22,14 @@
     recommendedTlsSettings = true;
 
     upstreams = {
-      "api-otomadb" = {
+      "otomadb-api" = {
         servers = {
-          "0.0.0.0:4000" = {};
+          "0.0.0.0:30080" = {};
         };
       };
     };
 
-    virtualHosts."api.otomad-database.sno2wman.net" = {
+    virtualHosts."api.otomadb.com" = {
       enableACME = true;
       forceSSL = true;
       listen = [
@@ -46,7 +44,7 @@
         }
       ];
       locations."/" = {
-        proxyPass = "http://api-otomadb/";
+        proxyPass = "http://otomadb-api/";
       };
     };
   };

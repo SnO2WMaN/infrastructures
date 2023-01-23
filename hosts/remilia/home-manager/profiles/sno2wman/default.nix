@@ -10,4 +10,11 @@
     ../../modules/zellij
     ../../modules/zsh
   ];
+
+  home.packages = with pkgs; [
+    httpie
+    masscan
+    nmap
+    doas
+  ];
 }
