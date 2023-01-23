@@ -6,7 +6,3 @@ includes = ["*.nix"]
 command = "taplo"
 options = ["format"]
 includes = ["*.toml"]
-
-[formatter.yamlfmt]
-command = "yamlfmt"
-includes = ["*.yml", "*.yaml"]
