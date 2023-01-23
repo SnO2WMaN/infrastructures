@@ -8,7 +8,6 @@
   home-manager,
   vscode-server,
   agenix,
-  arion,
   ...
 }: {
   imports =
@@ -17,7 +16,6 @@
       home-manager.nixosModules.home-manager
       vscode-server.nixosModules.default
       agenix.nixosModules.age
-      arion.nixosModules.arion
     ]
     ++ (with nixos-hardware.nixosModules; [
       common-cpu-amd
