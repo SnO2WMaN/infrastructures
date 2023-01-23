@@ -1,6 +1,8 @@
 {
+  # main
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
@@ -16,22 +18,19 @@
       url = "github:msteen/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+  # dev
+  inputs = {
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     devshell = {
       url = "github:numtide/devshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.flake-utils.follows = "flake-utils";
     };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
-    # vscode-marketplace = {
-    #   url = "github:AmeerTaweel/nix-vscode-marketplace";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
   outputs = {
     self,
-    nixpkgs,
+    nixpkgs-unstable,
     flake-utils,
     ...
   } @ inputs:
@@ -40,7 +39,7 @@
     }
     // flake-utils.lib.eachDefaultSystem (
       system: let
-        pkgs = import nixpkgs {
+        pkgs = import nixpkgs-unstable {
           inherit system;
           overlays = with inputs; [
             devshell.overlay
@@ -56,6 +55,7 @@
             git-crypt
             taplo-cli
             agenix
+            httpie
           ];
         };
       }
