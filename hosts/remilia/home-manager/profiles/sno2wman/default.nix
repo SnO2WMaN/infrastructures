@@ -3,6 +3,7 @@
   imports = [
     ../../modules/bottom
     ../../modules/dogdns
+    ../../modules/direnv
     ../../modules/ghq
     ../../modules/git
     ../../modules/starship
