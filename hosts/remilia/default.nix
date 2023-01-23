@@ -151,6 +151,13 @@
         "sno2wman"
         "nix-builder"
       ];
+      substituters = [
+        "https://cache.nixos.org"
+        "https://sno2wman.cachix.org"
+      ];
+      trusted-public-keys = [
+        "sno2wman.cachix.org-1:JHDNKuz+q1xthbonwirDQzMZtwPrDnwCq3wUX3kmBVU="
+      ];
     };
 
     buildMachines = [
