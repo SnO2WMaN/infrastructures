@@ -31,7 +31,7 @@
       ./otomadb
       ./k3s.nix
       # ./cloudflared.nix
-      # ./ddclient.nix
+      ./ddclient.nix
     ];
 
   boot = {
