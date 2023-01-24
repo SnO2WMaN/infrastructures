@@ -30,8 +30,8 @@
     ++ [
       ./otomadb
       ./k3s.nix
-      # ./cloudflared.nix
       ./ddclient.nix
+      ./cloudflared.nix
     ];
 
   boot = {
