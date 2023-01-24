@@ -128,13 +128,7 @@
   };
 
   nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      builders-use-substitutes = true
-      keep-outputs = true
-      keep-derivations = true
-    '';
+    package = pkgs.nixVersions.stable;
 
     gc = {
       automatic = true;
@@ -144,6 +138,11 @@
 
     settings = {
       auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+      builders-use-substitutes = true;
+      keep-outputs = true;
+      keep-derivations = true;
+
       trusted-users = [
         "root"
         "sno2wman"
