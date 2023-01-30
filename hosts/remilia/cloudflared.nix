@@ -12,7 +12,7 @@
         default = "http_status:404";
         credentialsFile = config.age.secrets.cloudflared-tunnel.path;
         ingress = {
-          "ssh.sno2wman.net" = "ssh://localhost:22";
+          "ssh.sno2wman.net/remilia" = "ssh://localhost:22";
         };
       };
     };
