@@ -8,10 +8,11 @@
     ../../modules/exa
     ../../modules/ghq
     ../../modules/git
+    ../../modules/misc/repositories.nix
+    ../../modules/neovim
     ../../modules/nix-index
     ../../modules/rm-improved
     ../../modules/starship
-    ../../modules/neovim
     ../../modules/zellij
     ../../modules/zsh
   ];
