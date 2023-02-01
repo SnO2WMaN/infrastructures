@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  programs.zellij = {
-    enable = true;
-  };
+  home.packages = with pkgs; [
+    exa
+  ];
   programs.zsh.shellAliases = {
-    ze = "zellij";
+    ls = "exa";
   };
 }

@@ -7,6 +7,11 @@
     autocd = false;
 
     shellAliases = {
+      # human friendly
+      cp = "cp -i";
+      df = "df -h";
+      free = "free -m";
+
       # ls
       l = "clear && l";
       ll = "ls -alF";
@@ -14,9 +19,10 @@
       lt = "ls -T";
       l1 = "ls -1";
 
-      # docker
+      # short
       d = "docker";
       dc = "docker compose";
+      v = "vim";
     };
 
     zplug = {
