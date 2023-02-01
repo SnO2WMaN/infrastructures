@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  programs.zellij = {
-    enable = true;
-  };
+  home.packages = with pkgs; [
+    rm-improved
+  ];
   programs.zsh.shellAliases = {
-    ze = "zellij";
+    rm = "rip";
   };
 }

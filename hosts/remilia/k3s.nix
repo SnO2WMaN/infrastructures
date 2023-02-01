@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   networking.firewall.allowedTCPPorts = [6443];
 
   services.k3s = {
@@ -6,4 +10,8 @@
     role = "server";
     extraFlags = "--write-kubeconfig-mode 644";
   };
+
+  environment.systemPackages = with pkgs; [
+    kubectl
+  ];
 }

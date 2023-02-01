@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  programs.zellij = {
+  programs.bat = {
     enable = true;
   };
   programs.zsh.shellAliases = {
-    ze = "zellij";
+    cat = "bat";
   };
 }
