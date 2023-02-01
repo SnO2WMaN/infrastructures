@@ -30,7 +30,7 @@
     ++ [
       ./otomadb
       ./k3s.nix
-      # ./cloudflared.nix
+      ./cloudflared.nix
       # ./ddclient.nix
     ];
 
@@ -156,35 +156,13 @@
         "sno2wman.cachix.org-1:JHDNKuz+q1xthbonwirDQzMZtwPrDnwCq3wUX3kmBVU="
       ];
     };
-
-    buildMachines = [
-      {
-        hostName = "remilia";
-        systems = [
-          "x86_64-linux"
-          # "aarch64-linux"
-          # "i686-linux"
-        ];
-        sshUser = "nix-builder";
-        sshKey = "/etc/ssh/id_ed25519";
-        maxJobs = 24;
-        speedFactor = 2;
-        supportedFeatures = [
-          "nixos-test"
-          "benchmark"
-          "big-parallel"
-          "kvm"
-        ];
-        mandatoryFeatures = [];
-      }
-    ];
   };
 
   users.users.nix-builder = {
     isNormalUser = true;
-    # extraGroups = ["wheel"];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ02RYFEONAr/5a3fokBYHUFVPqF8G64DxhV5RGu7gtK me@sno2wman.net"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtSL9TwPQRUERassbIkL6CPdkBAUEqonDvv9h60HlF+ root@yukari"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6U0yPbjQxld5Lz3yQl01uATQxlDaNEgZ6GlE9h9PTt root@marisa"
     ];
   };
 }
