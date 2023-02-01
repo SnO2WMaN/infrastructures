@@ -39,7 +39,7 @@
           inherit system;
           overlays = with inputs; [
             devshell.overlay
-            agenix.overlay
+            agenix.overlays.default
           ];
         };
       in {
