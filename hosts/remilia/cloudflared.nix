@@ -1,4 +1,12 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    cloudflared
+  ];
+
   age.secrets."cloudflared-tunnel" = {
     file = ../../secrets/cloudflared/tunnels/remilia.age;
     owner = "cloudflared";
@@ -12,7 +20,7 @@
         default = "http_status:404";
         credentialsFile = config.age.secrets.cloudflared-tunnel.path;
         ingress = {
-          "ssh.sno2wman.net/remilia" = "ssh://localhost:22";
+          "ssh-remilia.sno2wman.net" = "ssh://localhost:22";
         };
       };
     };
