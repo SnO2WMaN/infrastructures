@@ -29,6 +29,7 @@
     ]
     ++ [
       ./otomadb
+      ./argocd
       ./k3s.nix
       ./cloudflared.nix
       # ./ddclient.nix
