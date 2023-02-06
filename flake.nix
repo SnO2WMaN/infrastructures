@@ -45,13 +45,16 @@
       in {
         devShells.default = pkgs.devshell.mkShell {
           packages = with pkgs; [
-            direnv
-            alejandra
-            treefmt
-            git-crypt
-            taplo-cli
             agenix
+            alejandra
+            direnv
             httpie
+            jq
+            kustomize
+            sops
+            taplo-cli
+            treefmt
+            yq
           ];
         };
       }
