@@ -31,7 +31,7 @@
     ...
   } @ inputs:
     {
-      nixosConfigurations = import ./hosts inputs;
+      nixosConfigurations = import ./nixos/hosts inputs;
     }
     // flake-utils.lib.eachDefaultSystem (
       system: let
