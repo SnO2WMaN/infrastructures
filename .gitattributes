@@ -1,2 +1,6 @@
 flake.lock linguist-generated=true
-*.secret.nix filter=git-crypt diff=git-crypt
+
+*.yml   linguist-detectable=true
+*.yaml  linguist-detectable=true
+*.yml   linguist-language=YAML
+*.yaml  linguist-language=YAML
