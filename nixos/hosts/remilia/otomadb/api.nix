@@ -1,7 +1,7 @@
 {...}: {
   networking.firewall.allowedTCPPorts = [
-    8080
-    8443
+    38080
+    38443
   ];
 
   security.acme = {
@@ -35,11 +35,11 @@
       listen = [
         {
           addr = "0.0.0.0";
-          port = 8080;
+          port = 38080;
         }
         {
           addr = "0.0.0.0";
-          port = 8443;
+          port = 38443;
           ssl = true;
         }
       ];
