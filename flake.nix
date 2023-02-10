@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server = {
-      url = "github:msteen/nixos-vscode-server";
+      url = "github:msteen/nixos-vscode-server/options";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     devshell = {

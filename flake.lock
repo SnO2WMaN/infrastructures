@@ -166,15 +166,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1662442857,
-        "narHash": "sha256-e2ex4mO4q6UBoJvPSRdYBX1vIvpulqs6SNxvdSsL6uE=",
+        "lastModified": 1675931835,
+        "narHash": "sha256-QmcGIUelFB0+X09/DW2dloqLPgRuOWgxYN1aU9Sw1DM=",
         "owner": "msteen",
         "repo": "nixos-vscode-server",
-        "rev": "c54b714db58ad05d064f394d6603751ee6bd04f6",
+        "rev": "bb6028fde6bea2ad5b778f9d7570d6ff776ee9f4",
         "type": "github"
       },
       "original": {
         "owner": "msteen",
+        "ref": "options",
         "repo": "nixos-vscode-server",
         "type": "github"
       }
