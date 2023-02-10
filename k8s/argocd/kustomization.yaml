@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: argocd
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.10/manifests/install.yaml
+  - https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/v0.12.2/manifests/install.yaml
   - ./ingress.yaml
 patchesStrategicMerge:
   - argocd-cm/kustomize.patch.yaml
