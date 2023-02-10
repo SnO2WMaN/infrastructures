@@ -18,14 +18,16 @@
   ];
 
   home.packages = with pkgs; [
-    fd # find for files
+    fd # ファイル用のfind
     fzf
-    httpie
-    hyperfine # benchmark
-    masscan
+    httpie # モダンなcurl
+    hyperfine # ベンチマーク用
+    jq # JSONの操作
+    masscan # モダンなnmap
     nmap
-    prettyping # pretty ping
-    tldr # modern man pages
-    tree # file dir
+    prettyping # リッチなUIがついたping
+    tldr # モダンなman
+    tree # ファイル構造を表示
+    yq # YAML版jq
   ];
 }
