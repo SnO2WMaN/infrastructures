@@ -8,8 +8,9 @@
   home-manager,
   vscode-server,
   agenix,
+  myscripts,
   ...
-}: {
+} @ inputs: {
   imports =
     [
       nixpkgs.nixosModules.notDetected
@@ -76,6 +77,9 @@
   # Additional packages
   system.stateVersion = "23.05";
 
+  nixpkgs.overlays = [
+    myscripts.overlays.default
+  ];
   environment.systemPackages = with pkgs; [
     direnv
     wget
@@ -108,7 +112,10 @@
       "kvm"
     ];
   };
-  home-manager.users.sno2wman = import ./home-manager/profiles/sno2wman;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = {inherit inputs;};
+  home-manager.users.sno2wman = ./home-manager/profiles/sno2wman;
 
   programs = {
     git = {
