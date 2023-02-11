@@ -29,5 +29,8 @@
     tldr # モダンなman
     tree # ファイル構造を表示
     yq # YAML版jq
+    clean-emptydir # 空ディレクトリを再帰的に削除する
+    listpath # $PATHを:で折り返して表示する
+    listgroups # groupsを表示
   ];
 }
