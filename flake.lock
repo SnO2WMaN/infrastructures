@@ -202,7 +202,6 @@
       },
       "original": {
         "owner": "msteen",
-        "ref": "options",
         "repo": "nixos-vscode-server",
         "type": "github"
       }
