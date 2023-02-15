@@ -10,6 +10,9 @@
       "api.otomadb.com" = {
         email = "me@sno2wman.net";
       };
+      "api-preview.otomadb.com" = {
+        email = "me@sno2wman.net";
+      };
     };
   };
 
@@ -23,6 +26,11 @@
 
     upstreams = {
       "api-otomadb-com" = {
+        servers = {
+          "0.0.0.0:30080" = {};
+        };
+      };
+      "api-preview-otomadb-com" = {
         servers = {
           "0.0.0.0:30080" = {};
         };
@@ -45,6 +53,25 @@
       ];
       locations."/" = {
         proxyPass = "http://api-otomadb-com/";
+      };
+    };
+
+    virtualHosts."api-preview.otomadb.com" = {
+      enableACME = true;
+      forceSSL = true;
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 38080;
+        }
+        {
+          addr = "0.0.0.0";
+          port = 38443;
+          ssl = true;
+        }
+      ];
+      locations."/" = {
+        proxyPass = "http://api-preview-otomadb-com/";
       };
     };
   };
