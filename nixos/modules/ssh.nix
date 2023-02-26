@@ -3,9 +3,11 @@
 
   services.openssh = {
     enable = true;
-    passwordAuthentication = false;
     ports = [22];
-    permitRootLogin = "no";
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
   };
 
   # users.users.root.openssh.authorizedKeys.keys = [
