@@ -10,7 +10,7 @@
     ../../modules/git
     ../../modules/misc/repositories.nix
     ../../modules/neovim
-    ../../modules/nix-index
+    # ../../modules/nix-index
     ../../modules/rm-improved
     ../../modules/starship
     ../../modules/zellij
