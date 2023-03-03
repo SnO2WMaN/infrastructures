@@ -44,7 +44,7 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = with inputs; [
-            devshell.overlay
+            devshell.overlays.default
             agenix.overlays.default
           ];
         };
