@@ -87,6 +87,7 @@
     curl
     bottom
     zellij
+    lsof
   ];
 
   # Network
