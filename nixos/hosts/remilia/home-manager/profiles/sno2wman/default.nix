@@ -18,19 +18,20 @@
   ];
 
   home.packages = with pkgs; [
+    clean-emptydir # 空ディレクトリを再帰的に削除する
     fd # ファイル用のfind
     fzf
     httpie # モダンなcurl
     hyperfine # ベンチマーク用
     jq # JSONの操作
+    listgroups # groupsを表示
+    listpath # $PATHを:で折り返して表示する
     masscan # モダンなnmap
     nmap
     prettyping # リッチなUIがついたping
+    procs # modern ps
     tldr # モダンなman
     tree # ファイル構造を表示
     yq # YAML版jq
-    clean-emptydir # 空ディレクトリを再帰的に削除する
-    listpath # $PATHを:で折り返して表示する
-    listgroups # groupsを表示
   ];
 }

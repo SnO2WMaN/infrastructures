@@ -81,13 +81,13 @@
     myscripts.overlays.default
   ];
   environment.systemPackages = with pkgs; [
-    direnv
-    wget
-    sudo
-    curl
     bottom
-    zellij
+    curl
+    direnv
     lsof
+    sudo
+    wget
+    zellij
   ];
 
   # Network
