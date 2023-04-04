@@ -134,6 +134,9 @@
     starship = {
       enable = true;
     };
+    zsh = {
+      enable = true;
+    };
   };
 
   nix = {
