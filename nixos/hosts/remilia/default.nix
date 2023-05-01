@@ -81,11 +81,12 @@
     myscripts.overlays.default
   ];
   environment.systemPackages = with pkgs; [
-    direnv
-    wget
-    sudo
-    curl
     bottom
+    curl
+    direnv
+    lsof
+    sudo
+    wget
     zellij
   ];
 
@@ -133,6 +134,9 @@
     starship = {
       enable = true;
     };
+    zsh = {
+      enable = true;
+    };
   };
 
   nix = {
@@ -140,8 +144,8 @@
 
     gc = {
       automatic = true;
-      dates = "monthly";
-      options = "--delete-older-than 30d";
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
 
     settings = {

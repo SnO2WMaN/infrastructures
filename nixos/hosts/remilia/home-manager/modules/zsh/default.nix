@@ -23,6 +23,8 @@
       d = "docker";
       dc = "docker compose";
       v = "vim";
+
+      unixtime = "date +%s";
     };
 
     zplug = {
