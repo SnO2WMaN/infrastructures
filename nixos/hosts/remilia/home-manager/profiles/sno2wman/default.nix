@@ -21,7 +21,7 @@
     cargo # Rust用のパッケージマネージャ
     clean-emptydir # 空ディレクトリを再帰的に削除する
     cloc # コード行数のカウント
-    dust # modern du
+    du-dust # modern du
     fd # ファイル用のfind
     fzf
     httpie # モダンなcurl
