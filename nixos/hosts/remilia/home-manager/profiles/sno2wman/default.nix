@@ -27,6 +27,7 @@
     httpie # モダンなcurl
     hyperfine # ベンチマーク用
     jq # JSONの操作
+    killport # port番号を指定してkillする
     listgroups # groupsを表示
     listpath # $PATHを:で折り返して表示する
     masscan # モダンなnmap
