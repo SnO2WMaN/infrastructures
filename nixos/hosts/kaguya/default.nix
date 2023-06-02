@@ -26,6 +26,7 @@
       ../../modules/i18n.nix
       ../../modules/sound.nix
       ../../modules/ssh.nix
+      ../../modules/stylix
       ../../modules/time.nix
     ]
     ++ [
@@ -109,6 +110,18 @@
       "video"
     ];
   };
+  security.sudo.extraRules = [
+    {
+      users = ["sno2wman"];
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {inherit inputs;};
