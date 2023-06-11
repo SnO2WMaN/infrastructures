@@ -8,6 +8,7 @@
     myscripts.url = "github:SnO2WMaN/scripts.nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    stylix.url = "github:danth/stylix";
     vscode-server.url = "github:msteen/nixos-vscode-server";
   };
   outputs = {
