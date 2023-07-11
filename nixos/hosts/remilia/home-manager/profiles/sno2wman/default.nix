@@ -1,20 +1,20 @@
 {pkgs, ...}: {
   home.stateVersion = "23.05";
   imports = [
-    ../../modules/bat
-    ../../modules/bottom
-    ../../modules/direnv
-    ../../modules/dogdns
-    ../../modules/exa
-    ../../modules/ghq
-    ../../modules/git
-    ../../modules/misc/repositories.nix
-    ../../modules/neovim
+    ../../../../../home-manager/bat
+    ../../../../../home-manager/bottom
+    ../../../../../home-manager/direnv
+    ../../../../../home-manager/dogdns
+    ../../../../../home-manager/exa
+    ../../../../../home-manager/ghq
+    ../../../../../home-manager/git
+    ../../../../../home-manager/misc/repositories.nix
+    ../../../../../home-manager/neovim
+    ../../../../../home-manager/rm-improved
+    ../../../../../home-manager/starship
+    ../../../../../home-manager/zellij
+    ../../../../../home-manager/zsh
     # ../../modules/nix-index
-    ../../modules/rm-improved
-    ../../modules/starship
-    ../../modules/zellij
-    ../../modules/zsh
   ];
 
   home.packages = with pkgs; [
