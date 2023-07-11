@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     myscripts.url = "github:SnO2WMaN/scripts.nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     vscode-server.url = "github:msteen/nixos-vscode-server";
   };
