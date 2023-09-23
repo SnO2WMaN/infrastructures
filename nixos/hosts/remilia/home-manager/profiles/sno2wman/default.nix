@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.stateVersion = "23.05";
   imports = [
     ../../../../../home-manager/bat
@@ -22,6 +22,7 @@
     clean-emptydir # 空ディレクトリを再帰的に削除する
     cloc # コード行数のカウント
     du-dust # modern du
+    elan # Package Manager for Lean Theorem Prover
     fd # ファイル用のfind
     fzf
     httpie # モダンなcurl

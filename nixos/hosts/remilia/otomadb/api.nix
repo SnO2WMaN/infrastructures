@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   networking.firewall.allowedTCPPorts = [
     38080
     38443
@@ -10,7 +10,10 @@
       "api.otomadb.com" = {
         email = "me@sno2wman.net";
       };
-      "api-preview.otomadb.com" = {
+      "images.otomadb.com" = {
+        email = "me@sno2wman.net";
+      };
+      "imgproxy.otomadb.com" = {
         email = "me@sno2wman.net";
       };
     };
@@ -27,12 +30,17 @@
     upstreams = {
       "api-otomadb-com" = {
         servers = {
-          "0.0.0.0:30080" = {};
+          "0.0.0.0:30080" = { };
         };
       };
-      "api-preview-otomadb-com" = {
+      "ixgyohn-otomadb-com" = {
         servers = {
-          "0.0.0.0:30080" = {};
+          "0.0.0.0:30080" = { };
+        };
+      };
+      "imgproxy-otomadb-com" = {
+        servers = {
+          "0.0.0.0:30080" = { };
         };
       };
     };
@@ -56,7 +64,8 @@
       };
     };
 
-    virtualHosts."api-preview.otomadb.com" = {
+
+    virtualHosts."images.otomadb.com" = {
       enableACME = true;
       forceSSL = true;
       listen = [
@@ -71,7 +80,26 @@
         }
       ];
       locations."/" = {
-        proxyPass = "http://api-preview-otomadb-com/";
+        proxyPass = "http://ixgyohn-otomadb-com/";
+      };
+    };
+
+    virtualHosts."imgproxy.otomadb.com" = {
+      enableACME = true;
+      forceSSL = true;
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 38080;
+        }
+        {
+          addr = "0.0.0.0";
+          port = 38443;
+          ssl = true;
+        }
+      ];
+      locations."/" = {
+        proxyPass = "http://imgproxy-otomadb-com/";
       };
     };
   };
