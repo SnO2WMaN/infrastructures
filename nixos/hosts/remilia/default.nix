@@ -1,15 +1,14 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  nixpkgs,
-  nixos-hardware,
-  home-manager,
-  vscode-server,
-  agenix,
-  myscripts,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, nixpkgs
+, nixos-hardware
+, home-manager
+, vscode-server
+, agenix
+, myscripts
+, ...
 } @ inputs: {
   imports =
     [
@@ -75,7 +74,7 @@
   ];
 
   # Additional packages
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 
   nixpkgs.overlays = [
     myscripts.overlays.default
@@ -115,14 +114,14 @@
   };
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.extraSpecialArgs = {inherit inputs;};
+  home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.users.sno2wman = ./home-manager/profiles/sno2wman;
 
   programs = {
     git = {
       enable = true;
       config = {
-        safe.directory = ["/etc/nixos"];
+        safe.directory = [ "/etc/nixos" ];
       };
     };
     neovim = {
@@ -150,7 +149,7 @@
 
     settings = {
       auto-optimise-store = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
       builders-use-substitutes = true;
       keep-outputs = true;
       keep-derivations = true;

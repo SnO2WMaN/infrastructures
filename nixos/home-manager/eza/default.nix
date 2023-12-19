@@ -4,9 +4,9 @@
   ...
 }: {
   home.packages = with pkgs; [
-    exa
+    eza
   ];
   programs.zsh.shellAliases = {
-    ls = "exa";
+    ls = "eza";
   };
 }

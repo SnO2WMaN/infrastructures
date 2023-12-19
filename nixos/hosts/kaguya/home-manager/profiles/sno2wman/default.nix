@@ -6,7 +6,7 @@
     ../../../../../home-manager/bottom
     ../../../../../home-manager/direnv
     ../../../../../home-manager/dogdns
-    ../../../../../home-manager/exa
+    ../../../../../home-manager/eza
     ../../../../../home-manager/firefox
     ../../../../../home-manager/ghq
     ../../../../../home-manager/git

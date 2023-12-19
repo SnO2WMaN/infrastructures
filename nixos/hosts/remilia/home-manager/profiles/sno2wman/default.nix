@@ -5,7 +5,7 @@
     ../../../../../home-manager/bottom
     ../../../../../home-manager/direnv
     ../../../../../home-manager/dogdns
-    ../../../../../home-manager/exa
+    ../../../../../home-manager/eza
     ../../../../../home-manager/ghq
     ../../../../../home-manager/git
     ../../../../../home-manager/misc/repositories.nix

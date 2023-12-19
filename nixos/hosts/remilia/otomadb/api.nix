@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   networking.firewall.allowedTCPPorts = [
     38080
     38443
@@ -30,17 +30,17 @@
     upstreams = {
       "api-otomadb-com" = {
         servers = {
-          "0.0.0.0:30080" = { };
+          "0.0.0.0:30080" = {};
         };
       };
       "ixgyohn-otomadb-com" = {
         servers = {
-          "0.0.0.0:30080" = { };
+          "0.0.0.0:30080" = {};
         };
       };
       "imgproxy-otomadb-com" = {
         servers = {
-          "0.0.0.0:30080" = { };
+          "0.0.0.0:30080" = {};
         };
       };
     };
@@ -63,7 +63,6 @@
         proxyPass = "http://api-otomadb-com/";
       };
     };
-
 
     virtualHosts."images.otomadb.com" = {
       enableACME = true;
